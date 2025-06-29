@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+    <header>
+      <h1>Bilanciatura Gelato</h1>
+      <p>Inserisci i pesi dei tuoi ingredienti, aggiungi o modifica ingredienti e controlla subito se la ricetta è bilanciata!</p>
+    </header>
+
+    <!-- Tabella ingredienti -->
+    <section id="tabella-ingredienti">
+      <h2>Ingredienti e Pesi</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ingrediente</th>
+            <th>Peso (g)</th>
+            <th>Modifica</th>
+            <th>Elimina</th>
+          </tr>
+        </thead>
+        <tbody id="ingredienti-lista">
+          <!-- Popolato via JS -->
+        </tbody>
+      </table>
+      <button id="aggiungi-ingrediente">Aggiungi Ingrediente</button>
+      <button id="reset-ingredienti">Reset Ingredienti Base</button>
+    </section>
+
+    <!-- Risultato fisso in basso -->
+    <section id="risultati" class="sticky-results">
+      <h2>Risultato Bilanciatura</h2>
+      <div id="report-bilanciatura">
+        <em>Inserisci almeno un peso per vedere la bilanciatura.</em>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal aggiunta/modifica ingrediente -->
+  <div id="modal-ingrediente" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modal-titolo">Aggiungi/Modifica Ingrediente</h3>
+      <form id="form-ingrediente">
+        <label>Nome ingrediente:<input type="text" id="ingrediente-nome" required></label>
+        <label>Zuccheri totali (%):<input type="number" id="ingrediente-zuccheri" step="0.1" required></label>
+        <label>Grassi (%):<input type="number" id="ingrediente-grassi" step="0.1" required></label>
+        <label>Solidi magri latte (%):<input type="number" id="ingrediente-solidi-magri" step="0.1" required></label>
+        <label>Altri solidi (%):<input type="number" id="ingrediente-altri-solidi" step="0.1" required></label>
+        <label>Solidi totali (%):<input type="number" id="ingrediente-solidi-totali" step="0.1" required></label>
+        <div class="modal-actions">
+          <button type="submit" id="salva-ingrediente">Salva</button>
+          <button type="button" id="annulla-ingrediente">Annulla</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
