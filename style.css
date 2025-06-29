@@ -1,0 +1,153 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: #f7fafd;
+  font-family: system-ui, sans-serif;
+  color: #19395c;
+}
+
+.container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+header {
+  padding: 1.2em 1em 0.5em 1em;
+  background: #2571cd;
+  color: #fff;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.3em 0;
+  font-size: 2em;
+}
+
+header p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+#tabella-ingredienti {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: calc(100vh - 275px); /* Regola se vuoi più/meno spazio fisso */
+  padding: 1em;
+}
+
+#tabella-ingredienti h2 {
+  margin-top: 0;
+}
+
+.sticky-results {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.08);
+  padding: 1rem;
+  z-index: 10;
+  border-top: 1px solid #e0e0e0;
+}
+
+.sticky-results h2 {
+  margin-top: 0;
+}
+
+#tabella-ingredienti {
+  scrollbar-width: thin;
+}
+
+/* Tabella ingredienti */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5em;
+  background: #fff;
+  font-size: 1em;
+}
+
+th, td {
+  padding: 0.45em;
+  text-align: left;
+}
+
+th {
+  background: #e6effa;
+  font-weight: bold;
+}
+
+tr:nth-child(even) td {
+  background: #f7fafd;
+}
+
+input[type="number"], input[type="text"] {
+  border-radius: 0.4em;
+  border: 1px solid #c3c3c3;
+  padding: 0.25em 0.5em;
+  width: 80px;
+  font-size: 1em;
+}
+
+button {
+  margin: 0.4em 0.2em;
+  padding: 0.5em 1.1em;
+  border-radius: 0.7em;
+  border: none;
+  background: #2571cd;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.16s;
+}
+button:active {
+  background: #185c9b;
+}
+
+/* Risultati bilanciatura colori */
+.range-ok { color: #2eaf4a; font-weight: bold; }
+.range-warn { color: #d90000; font-weight: bold; }
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 14px;
+  max-width: 90vw;
+  min-width: 270px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0.2em; }
+  .modal-content { min-width: 95vw; }
+  table, th, td { font-size: 0.96em; }
+}
