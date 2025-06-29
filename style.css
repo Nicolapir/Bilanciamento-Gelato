@@ -21,18 +21,34 @@ body {
   min-height: 0;
 }
 
-/* Sezione ingredienti: scorrevole */
+header {
+  padding: 1.2em 1em 0.5em 1em;
+  background: #2571cd;
+  color: #fff;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.3em 0;
+  font-size: 2em;
+}
+
+header p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 400;
+}
+
 #tabella-ingredienti {
   flex: 1 1 auto;
   overflow-y: auto;
   min-height: 0;
-  max-height: calc(100vh - 180px); /* Regola questo valore se necessario */
+  max-height: calc(100vh - 275px); /* Regola se vuoi più/meno spazio fisso */
   padding: 1em;
 }
 
 #tabella-ingredienti h2 {
-  margin-top: 0.2em;
-  margin-bottom: 0.6em;
+  margin-top: 0;
 }
 
 .sticky-results {
@@ -47,7 +63,6 @@ body {
 
 .sticky-results h2 {
   margin-top: 0;
-  margin-bottom: 0.7em;
 }
 
 #tabella-ingredienti {
